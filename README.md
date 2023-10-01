@@ -1,7 +1,7 @@
 # Projeto Screenmatch
 
 ### Simula uma pagina de cadastro e lista de filmes
-Video Aula da plataforma de estudos Alura
+Adaptado do cuso Alura Screenatch
 
 * Linguagem de programação back-end utilizada: Java;
 * Framework front end: Thymeleaf;
