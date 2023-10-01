@@ -1,4 +1,4 @@
-# Projeto Screenmatch
+# Projeto CRUD com Front-End
 
 ### Simula uma pagina de cadastro e lista de filmes
 Adaptado do cuso Alura Screenatch
