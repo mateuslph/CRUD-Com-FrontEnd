@@ -12,4 +12,11 @@ public class FilmesBusiness {
             mensagens.add("Filme com Duração menor que o pemitido!!");
         }
     }
+    // TODO: 01/10/2023 validar para que o filme nao seja menor que 1900 caso for ficar na mesma tela e
+    //  avisar a inconsistemncia ao usuario
+
+    // TODO: 01/10/2023 validar para que o genero de acao nao seja com duracao menor de que 120 minutos e
+    //  o ano menor que 1950
+
+    // TODO: 01/10/2023 mostrar essas inconsistencias na tela
 }
