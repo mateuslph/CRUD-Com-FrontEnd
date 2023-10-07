@@ -51,9 +51,23 @@ public class FilmeService {
     }
 
     @Transactional
-    public void alterarFilme(DadosAlteracaoFilme dados) {
-        Filme filme = filmeRepository.getReferenceById(dados.id());
-        filme.atualizaDados(dados);
+    public List<String> alterarFilme(DadosAlteracaoFilme dados) {
+        Filme filme;
+        List<String> mensagensDeErro = new ArrayList<>();
+        try {
+            filmesBusiness.verificaDadosDto(dados, mensagensDeErro);
+            if (mensagensDeErro.isEmpty()) {
+                filme = filmeRepository.getReferenceById(dados.id());
+                filme.atualizaDados(dados);
+                return mensagensDeErro;
+            } else {
+                throw new RuntimeException("Existem Erros de Validação!!");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getCause());
+            System.out.println(mensagensDeErro);
+            return mensagensDeErro;
+        }
     }
 
     @Transactional

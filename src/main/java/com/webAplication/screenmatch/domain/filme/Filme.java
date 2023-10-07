@@ -2,6 +2,8 @@ package com.webAplication.screenmatch.domain.filme;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name="filmes")
 public class Filme {
@@ -13,16 +15,31 @@ public class Filme {
     private Integer duracaoEmMinutos;
     private Integer anoLancamento;
     private String genero;
+    private LocalDate dataGravacao;
 
     public Filme(DadosCadastroFilme dados) {
+            this.nome = dados.nome();
+            this.duracaoEmMinutos = dados.duracao();
+            this.anoLancamento = dados.ano();
+            this.genero = dados.genero();
+    }
+
+    public Filme() {
+
+    }
+
+    public Filme(DadosAlteracaoFilme dados) {
         this.nome = dados.nome();
         this.duracaoEmMinutos = dados.duracao();
         this.anoLancamento = dados.ano();
         this.genero = dados.genero();
     }
 
-    public Filme() {
-
+    public void atualizaDados(DadosAlteracaoFilme dados) {
+        this.nome = dados.nome();
+        this.duracaoEmMinutos = dados.duracao();
+        this.anoLancamento = dados.ano();
+        this.genero = dados.genero();
     }
 
     @Override
@@ -55,11 +72,7 @@ public class Filme {
         return genero;
     }
 
-    public void atualizaDados(DadosAlteracaoFilme dados) {
-        this.nome = dados.nome();
-        this.duracaoEmMinutos = dados.duracao();
-        this.anoLancamento = dados.ano();
-        this.genero = dados.genero();
-    }
+    public LocalDate getDataGravacao() { return dataGravacao; }
+
 }
 

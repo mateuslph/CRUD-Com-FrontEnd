@@ -32,8 +32,8 @@ public class FilmeController {
 
     @PostMapping
     public String cadastraFilmes(DadosCadastroFilme dados) {
-        boolean dadosValidos = filmeService.salvar(dados);
-        if (dadosValidos) {
+        boolean dadosSalvos = filmeService.salvar(dados);
+        if (dadosSalvos) {
             return "redirect:/filmes";
         } return "filmes/formulario";
     }
