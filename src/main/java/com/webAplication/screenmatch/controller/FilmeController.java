@@ -1,13 +1,9 @@
 package com.webAplication.screenmatch.controller;
 
-import com.webAplication.screenmatch.domain.filme.DadosAlteracaoFilme;
-import com.webAplication.screenmatch.domain.filme.DadosCadastroFilme;
-import com.webAplication.screenmatch.domain.filme.Filme;
-import com.webAplication.screenmatch.repository.FilmeRepository;
+import com.webAplication.screenmatch.domain.filme.FilmeDto;
 import com.webAplication.screenmatch.service.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +27,7 @@ public class FilmeController {
     }
 
     @PostMapping
-    public String cadastraFilmes(DadosCadastroFilme dados) {
+    public String cadastraFilmes(FilmeDto dados) {
         boolean dadosSalvos = filmeService.salvar(dados);
         if (dadosSalvos) {
             return "redirect:/filmes";
@@ -39,7 +35,7 @@ public class FilmeController {
     }
 
     @PutMapping
-    public String alteraFilmes(DadosAlteracaoFilme dados) {
+    public String alteraFilmes(FilmeDto dados) {
         filmeService.alterarFilme(dados);
         return "redirect:/filmes";
     }

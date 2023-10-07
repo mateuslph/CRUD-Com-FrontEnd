@@ -1,8 +1,7 @@
 package com.webAplication.screenmatch.service;
 
 import com.webAplication.screenmatch.business.FilmesBusiness;
-import com.webAplication.screenmatch.domain.filme.DadosAlteracaoFilme;
-import com.webAplication.screenmatch.domain.filme.DadosCadastroFilme;
+import com.webAplication.screenmatch.domain.filme.FilmeDto;
 import com.webAplication.screenmatch.domain.filme.Filme;
 import com.webAplication.screenmatch.repository.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +21,12 @@ public class FilmeService {
     FilmesBusiness filmesBusiness;
 
     @Transactional
-    public boolean salvar(DadosCadastroFilme dados) {
-        Filme filme = new Filme(dados);
+    public boolean salvar(FilmeDto filmeDto) {
         List<String> mensagensDeErro = new ArrayList<>();
         try {
-            filmesBusiness.verificaDados(filme, mensagensDeErro);
+            filmesBusiness.verificaDadosDto(filmeDto, mensagensDeErro);
             if (mensagensDeErro.isEmpty()) {
+                Filme filme = new Filme(filmeDto);
                 filmeRepository.save(filme);
                 return true;
             } else {
@@ -51,7 +50,7 @@ public class FilmeService {
     }
 
     @Transactional
-    public List<String> alterarFilme(DadosAlteracaoFilme dados) {
+    public List<String> alterarFilme(FilmeDto dados) {
         Filme filme;
         List<String> mensagensDeErro = new ArrayList<>();
         try {
