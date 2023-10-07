@@ -3,6 +3,7 @@ package com.webAplication.screenmatch.domain.filme;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="filmes")
@@ -15,13 +16,14 @@ public class Filme {
     private Integer duracaoEmMinutos;
     private Integer anoLancamento;
     private String genero;
-    private LocalDate dataGravacao;
+    private LocalDateTime dataHoraGravacao;
 
     public Filme(FilmeDto dados) {
             this.nome = dados.nome();
             this.duracaoEmMinutos = dados.duracao();
             this.anoLancamento = dados.ano();
             this.genero = dados.genero();
+            this.dataHoraGravacao = LocalDateTime.now();
     }
 
     public Filme() {
@@ -64,7 +66,7 @@ public class Filme {
         return genero;
     }
 
-    public LocalDate getDataGravacao() { return dataGravacao; }
+    public LocalDateTime getDataHoraGravacao() { return dataHoraGravacao; }
 
 }
 
