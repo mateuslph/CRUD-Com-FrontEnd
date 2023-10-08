@@ -14,6 +14,14 @@ Adaptado do cuso Alura Screenatch
 ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)
 
 ---
-Imagens do projeto:
-![lista_de_filmes](https://github.com/mateuslph/CRUD-Com-FrontEnd/blob/main/imgs/lista_de_filmes.png)
-![tela_de_cadastro](https://github.com/mateuslph/CRUD-Com-FrontEnd/blob/main/imgs/tela_de_cadastro.png)
+<div>
+  Imagens do projeto:
+</div>
+</br>
+<div>
+  <img src="https://github.com/mateuslph/CRUD-Com-FrontEnd/blob/main/imgs/lista_de_filmes.png"></img>
+</div>
+</br>
+<div>
+  <img src="https://github.com/mateuslph/CRUD-Com-FrontEnd/blob/main/imgs/tela_de_cadastro.png"></img>
+</div>
