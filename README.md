@@ -1,7 +1,7 @@
 # CRUD com Front-End
 
 ### Simula uma pagina de cadastro e lista de filmes
-Adaptado do cuso Alura Screenatch
+Adaptado da plataforma de cursos [Alura](https://www.alura.com.br/) o projeto Screenatch
 
 * Linguagem de programação back-end utilizada: Java;
 * Framework front end: Thymeleaf;
